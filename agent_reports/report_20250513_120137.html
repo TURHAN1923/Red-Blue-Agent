@@ -1,0 +1,68 @@
+<html><head><meta charset="UTF-8"><title>Red & Blue Agent Raporu</title></head><body style="font-family:Arial;">
+<h1>Red & Blue Agent Güvenlik Raporu</h1>
+<p><b>Tarih:</b> 2025-05-13 12:01:37</p>
+<p><b>Sistem Bilgisi:</b> sql</p>
+<p><b>Risk Seviyesi:</b> High Risk</p>
+
+<h2>🚨 Önerilen Acil Eylemler</h2>
+<ul><li>1. Açık portları acilen kapatın veya güvenli hale getirin.</li><li>2. Şifreleme ve güvenlik protokollerini uygulayın (SSL, VPN vb.).</li><li>3. Hızlı bir sızma testi (penetration test) yaptırın.</li></ul><h2>🔐 Önerilen Güvenlik Ürünleri</h2>
+<ul><li>1. WAF (AWS WAF, Cloudflare)</li><li>2. IDS/IPS (Snort, Suricata)</li><li>3. Parola yöneticisi (Bitwarden, LastPass)</li><li>4. MFA araçları</li></ul><h2>🔴 Red Agent Planı</h2>
+<pre>1. Aşağıdaki saldırılar uygulanabilir:
+     - SQL Injection (SQLi)
+     - Brute Force Attacks
+     - Denial of Service (DoS)
+     - User Enumeration
+     - Remote File Inclusion (RFI)
+     - Cross-Site Scripting (XSS)
+     - Session Hijacking/Management
+
+  2. Hangi araçlar ve yöntemler kullanılabilir:
+     - SQL Map (SQL Injection testing tool)
+     - Burp Suite (Web application testing framework)
+     - Metasploit (Penetration testing framework)
+     - John the Ripper (Password cracker)
+     - Wireshark (Network protocol analyzer)
+     - Nmap (Network exploration and security auditing tool)
+     - Social Engineering Techniques
+
+  3. Saldırı planı:
+     1. Scanning: Kullanılan ağa ve hizmete yönelik yapılandırmaları ve açıklık durumunu belirle. Nmap kullanarak port taraması yapılacaktır (nmap -p- <IP>).
+     2. Enumeration: Kullanılan web sitesini ziyaret et ve Burp Suite ile Web Application Scanning yapılacaktır. SQL Map kullanarak SQL Injection testi yapılacaktır (sqlmap -u <URL>).
+     3. Brute Force: Kullanıcı adı ve parola hakkında bilgilerin elde edilmesi için brute force attack uygulanabilir. John the Ripper kullanarak bu amaçla yapılacaktır (john --wordlist=<WordList> <UserName>).
+     4. Session Hijacking: Bir sesi aldıysanız, Metasploit'te sesi hijack etmek için kullanılabilecek bir yöntem var (use auxiliary/spoof/http/httr_fuzzer).
+     5. Cross-Site Scripting: Burp Suite ile Web Application Scanning yapılacak ve XSS vulnerabilities bulunma hiziyesi artırılacaktır.
+     6. DoS: Metasploit'te Denial of Service attack uygulanabilir (use exploit/dos/http_flood).</pre><h2>🔵 Blue Agent Yanıtı</h2><pre>Blue Team olarak, Red Team'in saldırısına karşı savunma önlemi olarak aşağıdaki adımları gerçekleştiriyoruz:
+
+1. Güvenlik Açıklarını Kapatmak:
+   - SQL Injection: Gerekli parametrelerin kodlanmasiyle ve parameterized query kullanımıyla kapatılabilir.
+   - Brute Force Attacks: Parola karmaşasını artırmak için parola politikalarının oluşturulması, kullanıcı adı ve parola hakkında bilgilerin elde edilmesi için brute force attack uygulanmasına izin verilmemesi gerekir. 
+   - User Enumeration: Kullanıcı adlarının gizli tutulması, kullanıcı adlarının sayısını sınırlama, kullanıcı adlarını tahmin etmek için brute force attack uygulanmasına izin verilmemesi gerekir.
+   - RFI: Dışarıdaki dosya yükleme işlemini engellemek için dizin yolunda kontrol edilmesi ve dışardan yapılan yüklemelerin engellenmesi gerekir. 
+   - XSS: Cross-Site Scripting vulnerability'lerini kapatmak için JavaScript kodlarını inceleyip, XSS injection'ını engellecek adımlar atılmelidir.
+   - Session Hijacking: Seans hijack etmek için kullanılan yöntemlerin engellenmesi ve seansların otomatik olarak silinmesi gerekir.
+
+2. Savunma Araçları:
+   - Web Application Firewall (WAF): WAF, web uygulamasına yönelik saldırıları engellemek için tasarlanmış bir araçtır.
+   - Intrusion Detection System (IDS) ve Intrusion Prevention System (IPS): IDS, saldırıyı algılamayı sağlar; IPS, saldırıyı engelleme yeteneğine sahiptir. 
+   - Firewal: Ağ trafiğini kontrol etmek için firewall kullanılabilir. 
+
+3. Loglama, IDS, Firewall vb. Konfigürasyonları:
+   - Loglama: Sistem loglarının analiz edilmesi ve saldırıya karşı önlem alınmalıdır.
+   - IDS: IDS, saldırıyı algılamayı sağlar; sistem loglarını analiz etmelidir.
+   - Firewall: Ağ trafiğini kontrol etmek için firewall kullanılabilir. 
+
+4. Sistem Sağlamlaması:
+   - Secure Coding Practices: Gerekli parametrelerin kodlanmasiyle ve parameterized query kullanımıyla kapatılmalıdır.
+   - Password Policies: Parola karmaşasını artırmak için parola politikalarının oluşturulması gerekir.
+   - Access Control Lists (ACL): Kullanıcı adlarının gizli tutulması, kullanıcı adlarının sayısını sınırlama, kullanıcı adlarını tahmin etmek için brute force attack uygulanmasına izin verilmemesi gerekir.
+   - Regular Security Audits: Sistem güvenlik auditorları düzenli olarak sistem güvenlik durumunu incelemelidir.
+
+Diğer savunma önlemleri olarak;
+
+* Sistem loglarını analiz etmelidir.
+* Saldırılar algılanıp, önlem alınmalıdır.
+* Güvenlik açıklarını kapatmaya çalışılmalıdır.
+* Secure Coding Practices kullanılmıştır.
+* Parola karmaşasını artırmak için parola politikalarının oluşturulması gerekir.
+
+Bu adımları gerçekleştirerek, Red Team'in saldırısına karşı savunma önlemi olarak bir güvenlik mekanizması oluşturabiliriz.</pre></body></html>
